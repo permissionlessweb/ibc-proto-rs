@@ -4,7 +4,6 @@
 /// Note this type is referenced in both the consumer and provider CCV modules,
 /// and persisted on the provider, see MakeConsumerGenesis and
 /// SetConsumerGenesis.
-///
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ConsumerParams {
     /// TODO: Remove enabled flag and find a better way to setup integration tests
@@ -20,7 +19,7 @@ pub struct ConsumerParams {
     #[prost(int64, tag = "2")]
     pub blocks_per_distribution_transmission: i64,
     /// Channel, and provider-chain receiving address to send distribution token
-    /// transfers over. These parameters is auto-set during the consumer <->
+    /// transfers over. These parameters is auto-set during the consumer \<->
     /// provider handshake procedure.
     #[prost(string, tag = "3")]
     pub distribution_transmission_channel: ::prost::alloc::string::String,
