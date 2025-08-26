@@ -218,7 +218,7 @@ pub mod msg_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/ibc.lightclients.wasm.v1.Msg/StoreCode",
             );
@@ -243,7 +243,7 @@ pub mod msg_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/ibc.lightclients.wasm.v1.Msg/RemoveChecksum",
             );
@@ -270,7 +270,7 @@ pub mod msg_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/ibc.lightclients.wasm.v1.Msg/MigrateContract",
             );
@@ -427,7 +427,7 @@ pub mod msg_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = StoreCodeSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -470,7 +470,7 @@ pub mod msg_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = RemoveChecksumSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -513,7 +513,7 @@ pub mod msg_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = MigrateContractSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -752,7 +752,7 @@ pub mod query_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/ibc.lightclients.wasm.v1.Query/Checksums",
             );
@@ -777,7 +777,7 @@ pub mod query_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/ibc.lightclients.wasm.v1.Query/Code",
             );
@@ -926,7 +926,7 @@ pub mod query_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ChecksumsSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -969,7 +969,7 @@ pub mod query_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = CodeSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,

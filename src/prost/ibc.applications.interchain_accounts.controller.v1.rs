@@ -253,7 +253,7 @@ pub mod msg_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/ibc.applications.interchain_accounts.controller.v1.Msg/RegisterInterchainAccount",
             );
@@ -283,7 +283,7 @@ pub mod msg_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/ibc.applications.interchain_accounts.controller.v1.Msg/SendTx",
             );
@@ -313,7 +313,7 @@ pub mod msg_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/ibc.applications.interchain_accounts.controller.v1.Msg/UpdateParams",
             );
@@ -476,7 +476,7 @@ pub mod msg_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = RegisterInterchainAccountSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -519,7 +519,7 @@ pub mod msg_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = SendTxSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -562,7 +562,7 @@ pub mod msg_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = UpdateParamsSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -795,7 +795,7 @@ pub mod query_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/ibc.applications.interchain_accounts.controller.v1.Query/InterchainAccount",
             );
@@ -825,7 +825,7 @@ pub mod query_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/ibc.applications.interchain_accounts.controller.v1.Query/Params",
             );
@@ -979,7 +979,7 @@ pub mod query_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = InterchainAccountSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1022,7 +1022,7 @@ pub mod query_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ParamsSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,

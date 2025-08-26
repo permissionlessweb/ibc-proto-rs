@@ -126,10 +126,10 @@ impl CompileCmd {
         let attrs_ord = "#[derive(Eq, PartialOrd, Ord)]";
 
         // Automatically derive a `prost::Name` implementation.
-        let mut config = prost_build::Config::new();
+        let mut config = tonic_prost_build::Config::new();
         config.enable_type_names();
 
-        tonic_build::configure()
+        tonic_prost_build::configure()
             .build_transport(transport)
             .build_client(true)
             .compile_well_known_types(true)
@@ -169,7 +169,7 @@ impl CompileCmd {
             .type_attribute(".ibc.core.connection.v1.Counterparty", attrs_jsonschema)
             .type_attribute(".ibc.core.connection.v1.Version", attrs_jsonschema)
             .type_attribute(".ibc.lightclients.wasm.v1.ClientMessage", attrs_jsonschema)
-            .compile_protos_with_config(config, &protos, &proto_includes_paths)?;
+            .compile_with_config(config, &protos, &proto_includes_paths)?;
 
         println!("[info ] Protos compiled successfully");
 
@@ -245,6 +245,21 @@ impl CompileCmd {
                 "impl(.+)tonic::transport(.+)",
                 "#[cfg(feature = \"transport\")]\n    \
                 impl${1}tonic::transport${2}",
+            ),
+            // Remove Eq, Hash from all struct derives to fix trait bound errors
+            (
+                r"#\[derive\(Clone, PartialEq, Eq, Hash, ::prost::Message\)\]",
+                "#[derive(Clone, PartialEq, ::prost::Message)]",
+            ),
+            // Remove Eq, Hash from Copy structs
+            (
+                r"#\[derive\(Clone, Copy, PartialEq, Eq, Hash, ::prost::Message\)\]",
+                "#[derive(Clone, Copy, PartialEq, ::prost::Message)]",
+            ),
+            // Remove Eq, Hash from Oneof enums
+            (
+                r"#\[derive\(Clone, PartialEq, Eq, Hash, ::prost::Oneof\)\]",
+                "#[derive(Clone, PartialEq, ::prost::Oneof)]",
             ),
         ];
 

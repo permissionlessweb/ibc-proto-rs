@@ -362,7 +362,7 @@ pub mod msg_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/ibc.applications.fee.v1.Msg/RegisterPayee",
             );
@@ -391,7 +391,7 @@ pub mod msg_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/ibc.applications.fee.v1.Msg/RegisterCounterpartyPayee",
             );
@@ -425,7 +425,7 @@ pub mod msg_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/ibc.applications.fee.v1.Msg/PayPacketFee",
             );
@@ -452,7 +452,7 @@ pub mod msg_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/ibc.applications.fee.v1.Msg/PayPacketFeeAsync",
             );
@@ -631,7 +631,7 @@ pub mod msg_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = RegisterPayeeSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -677,7 +677,7 @@ pub mod msg_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = RegisterCounterpartyPayeeSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -720,7 +720,7 @@ pub mod msg_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = PayPacketFeeSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -763,7 +763,7 @@ pub mod msg_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = PayPacketFeeAsyncSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1472,7 +1472,7 @@ pub mod query_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/ibc.applications.fee.v1.Query/IncentivizedPackets",
             );
@@ -1502,7 +1502,7 @@ pub mod query_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/ibc.applications.fee.v1.Query/IncentivizedPacket",
             );
@@ -1534,7 +1534,7 @@ pub mod query_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/ibc.applications.fee.v1.Query/IncentivizedPacketsForChannel",
             );
@@ -1564,7 +1564,7 @@ pub mod query_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/ibc.applications.fee.v1.Query/TotalRecvFees",
             );
@@ -1591,7 +1591,7 @@ pub mod query_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/ibc.applications.fee.v1.Query/TotalAckFees",
             );
@@ -1618,7 +1618,7 @@ pub mod query_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/ibc.applications.fee.v1.Query/TotalTimeoutFees",
             );
@@ -1645,7 +1645,7 @@ pub mod query_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/ibc.applications.fee.v1.Query/Payee",
             );
@@ -1670,7 +1670,7 @@ pub mod query_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/ibc.applications.fee.v1.Query/CounterpartyPayee",
             );
@@ -1697,7 +1697,7 @@ pub mod query_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/ibc.applications.fee.v1.Query/FeeEnabledChannels",
             );
@@ -1727,7 +1727,7 @@ pub mod query_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/ibc.applications.fee.v1.Query/FeeEnabledChannel",
             );
@@ -1944,7 +1944,7 @@ pub mod query_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = IncentivizedPacketsSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1991,7 +1991,7 @@ pub mod query_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = IncentivizedPacketSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -2043,7 +2043,7 @@ pub mod query_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = IncentivizedPacketsForChannelSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -2088,7 +2088,7 @@ pub mod query_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = TotalRecvFeesSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -2133,7 +2133,7 @@ pub mod query_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = TotalAckFeesSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -2178,7 +2178,7 @@ pub mod query_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = TotalTimeoutFeesSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -2221,7 +2221,7 @@ pub mod query_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = PayeeSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -2266,7 +2266,7 @@ pub mod query_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = CounterpartyPayeeSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -2313,7 +2313,7 @@ pub mod query_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = FeeEnabledChannelsSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -2358,7 +2358,7 @@ pub mod query_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = FeeEnabledChannelSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
