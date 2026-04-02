@@ -44,7 +44,7 @@ informalsystems-pbjson = { version = "0.7.0", optional = true, default-features 
 [dependencies.tendermint-proto]
 version          = "0.40.0"
 default-features = false
-path = "../tendermint-rs/proto"
+git = "https://github.com/permissionlessweb/tendermint-rs"
 
 [dependencies.cosmos-sdk-proto]
 version = "0.28.0"
