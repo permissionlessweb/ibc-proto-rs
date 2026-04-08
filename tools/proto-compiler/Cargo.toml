@@ -15,5 +15,5 @@ argh                         = "0.1"
 tonic                        = "0.14.1"
 tonic-build                  = "0.14.1"
 similar                      = "2.2"
-informalsystems-pbjson-build = { version = "0.7.0", git = "https://github.com/permissionlessweb/pbjson", branch = "main"}
+informalsystems-pbjson-build = { path = "../../../pbjson/pbjson-build" }
 regex                        = "1"

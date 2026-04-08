@@ -38,11 +38,11 @@ schemars               = { version = "0.8.22", optional = true }
 subtle-encoding        = { version = "0.5",  default-features = false }
 base64                 = { version = "0.22", default-features = false, features = ["alloc"] }
 flex-error             = { version = "0.4",  default-features = false }
-ics23 = { git = "https://github.com/permissionlessweb/ics23", branch = "stable", default-features = false }
-informalsystems-pbjson = { git = "https://github.com/permissionlessweb/pbjson", branch = "main", default-features = false, optional = true }
+ics23 = { path = "../ics23/rust", default-features = false }
+informalsystems-pbjson = { path = "../pbjson/pbjson", default-features = false, optional = true }
 
-tendermint-proto = { git = "https://github.com/permissionlessweb/tendermint-rs", branch = "main", default-features = false }
-cosmos-sdk-proto = { git = "https://github.com/permissionlessweb/cosmos-rust", branch = "main", default-features = false }
+tendermint-proto = { path = "../tendermint-rs/proto", default-features = false }
+cosmos-sdk-proto = { path = "../cosmos-rust/cosmos-sdk-proto", default-features = false }
 [dev-dependencies]
 serde_json = "1.0.107"
 
@@ -58,15 +58,3 @@ parity-scale-codec = ["tendermint-proto/parity-scale-codec"]
 borsh              = ["tendermint-proto/borsh"]
 proto-descriptor   = []
 
-
-
-#[patch.crates-io]
-#ics23 = { path = "../ics23/rust" }
-#tendermint-proto = { path = "../tendermint-rs/proto" }
-#informalsystems-pbjson = { git = "https://github.com/permissionlessweb/pbjson", package = "informalsystems-pbjson" }
-#[patch.'https://github.com/permissionlessweb/ics23']
-#ics23 = { path = "../ics23/rust" }
-#[patch.'https://github.com/permissionlessweb/tendermint-rs']
-#tendermint-proto = { path = "../tendermint-rs/proto" }
-#[patch.'https://github.com/permissionlessweb/cosmos-rust']
-#cosmos-sdk-proto = { path = "../cosmos-rust/cosmos-sdk-proto" }
