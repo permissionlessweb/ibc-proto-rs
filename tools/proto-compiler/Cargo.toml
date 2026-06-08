@@ -7,13 +7,13 @@ publish      = false
 rust-version = "1.75"
 
 [dependencies]
-git2                         = "0.19"
-prost-build                  = "0.14.1"
-tonic-prost-build            = "0.14.1"
-walkdir                      = "2.3"
 argh                         = "0.1"
+git2                         = "0.19"
+informalsystems-pbjson-build = { path = "../../../pbjson/pbjson-build" }
+prost-build                  = "0.14.1"
+regex                        = "1"
+similar                      = "2.2"
 tonic                        = "0.14.1"
 tonic-build                  = "0.14.1"
-similar                      = "2.2"
-informalsystems-pbjson-build = { git = "https://github.com/permissionlessweb/pbjson", branch = "zk-mvp" }
-regex                        = "1"
+tonic-prost-build            = "0.14.1"
+walkdir                      = "2.3"

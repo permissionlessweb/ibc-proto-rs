@@ -56,10 +56,7 @@ pub use cosmos_sdk_proto::cosmos;
 pub use ics23;
 
 pub mod ibc {
-    #[deprecated(since = "0.15.0", note = "Use `ibc_proto::ibc::applications` instead")]
-    pub mod apps {
-        pub use super::applications::*;
-    }
+
     pub mod applications {
         pub mod transfer {
             pub mod v1 {
