@@ -56,8 +56,8 @@ proto-descriptor   = []
 base64                 = { version = "0.22", default-features = false, features = ["alloc"] }
 bytes                  = { version = "1.2", default-features = false }
 flex-error             = { version = "0.4", default-features = false }
-ics23 = { path = "../ics23/rust", package = "ics23", default-features = false }
-pbjson = { package = "informalsystems-pbjson", path = "../pbjson/pbjson", default-features = false, optional = true }
+ics23 = { version = "0.12.0", package = "ics23", default-features = false }
+pbjson = { package = "informalsystems-pbjson", version = "0.7.0", default-features = false, optional = true }
 prost                  = { version = "0.14", default-features = false, features = ["derive"] }
 schemars               = { version = "0.8.22", optional = true }
 serde                  = { version = "1.0", default-features = false, optional = true }
@@ -65,7 +65,14 @@ subtle-encoding        = { version = "0.5", default-features = false }
 tonic                  = { version = "0.14", default-features = false, optional = true }
 tonic-prost            = { version = "0.14", optional = true, default-features = false }
 
-cosmos-sdk-proto = { path = "../cosmos-rust/cosmos-sdk-proto", package = "cosmos-sdk-proto", default-features = false }
-tendermint-proto = { path = "../tendermint-rs/proto", package = "tendermint-proto", default-features = false }
+cosmos-sdk-proto = { version = "0.28.0", package = "cosmos-sdk-proto", default-features = false }
+tendermint-proto = { version = "0.40.4", package = "tendermint-proto", default-features = false }
+
 [dev-dependencies]
 serde_json = "1.0.107"
+
+[patch.crates-io]
+ics23 = { git = "https://github.com/permissionlessweb/ics23", rev = "a60a82d843d94f90a154ad2df390e1515546492e" }
+informalsystems-pbjson = { git = "https://github.com/permissionlessweb/pbjson", rev = "df9ae64ffc106affccdfec2437365f8498ef306d" }
+cosmos-sdk-proto = { git = "https://github.com/permissionlessweb/cosmos-rust", rev = "877ee79b693760f7ffa97ef542f5788c26f537dd" }
+tendermint-proto = { git = "https://github.com/permissionlessweb/tendermint-rs", rev = "c732393410cefadb53da98836a7620ef1a1ef8bb" }
