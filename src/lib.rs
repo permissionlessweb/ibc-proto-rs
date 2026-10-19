@@ -20,6 +20,9 @@ pub use tendermint_proto::Protobuf;
 
 extern crate alloc;
 
+#[cfg(feature = "serde")]
+extern crate pbjson;
+
 #[cfg(not(feature = "std"))]
 #[macro_use]
 extern crate core as std;

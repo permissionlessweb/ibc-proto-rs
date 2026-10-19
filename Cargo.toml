@@ -37,11 +37,11 @@ std                = [
     "base64/std",
     "flex-error/std",
     "ics23/std",
-    "informalsystems-pbjson/std",
+    "pbjson/std",
 ]
 serde              = [
     "dep:serde",
-    "dep:informalsystems-pbjson",
+    "dep:pbjson",
     "ics23/serde",
     "cosmos-sdk-proto/serde",
 ]
@@ -56,8 +56,8 @@ proto-descriptor   = []
 base64                 = { version = "0.22", default-features = false, features = ["alloc"] }
 bytes                  = { version = "1.2", default-features = false }
 flex-error             = { version = "0.4", default-features = false }
-ics23 = { git = "ssh://returniflost@groot-wan/Users/returniflost/abstract/terp-core/crates/ics23", branch = "stable", package = "ics23", default-features = false }
-informalsystems-pbjson = { git = "ssh://returniflost@groot-wan/Users/returniflost/abstract/terp-core/crates/pbjson", branch = "v3.1.0-zk.0", package = "informalsystems-pbjson", default-features = false, optional = true }
+ics23 = { path = "../ics23/rust", package = "ics23", default-features = false }
+pbjson = { package = "informalsystems-pbjson", path = "../pbjson/pbjson", default-features = false, optional = true }
 prost                  = { version = "0.14", default-features = false, features = ["derive"] }
 schemars               = { version = "0.8.22", optional = true }
 serde                  = { version = "1.0", default-features = false, optional = true }
@@ -65,7 +65,7 @@ subtle-encoding        = { version = "0.5", default-features = false }
 tonic                  = { version = "0.14", default-features = false, optional = true }
 tonic-prost            = { version = "0.14", optional = true, default-features = false }
 
-cosmos-sdk-proto = { git = "ssh://returniflost@groot-wan/Users/returniflost/abstract/terp-core/crates/cosmos-rust", branch = "v3.1.0-zk.0", package = "cosmos-sdk-proto", default-features = false }
-tendermint-proto = { git = "ssh://returniflost@groot-wan/Users/returniflost/abstract/terp-core/crates/tendermint-rs", branch = "v3.1.0-zk.0", package = "tendermint-proto", default-features = false }
+cosmos-sdk-proto = { path = "../cosmos-rust/cosmos-sdk-proto", package = "cosmos-sdk-proto", default-features = false }
+tendermint-proto = { path = "../tendermint-rs/proto", package = "tendermint-proto", default-features = false }
 [dev-dependencies]
 serde_json = "1.0.107"
